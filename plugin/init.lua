@@ -21,7 +21,7 @@ local function findPluginDir(myProject)
 end
 
 local separator = package.config:sub(1, 1) == "\\" and "\\" or "/"
-local repo_name = "file:///home/rootiest/projects/battery.wez"
+local repo_name = "https://github.com/rootiest/battery.wez"
 
 local plugin_dir = findPluginDir(repo_name)
 
