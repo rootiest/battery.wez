@@ -11,6 +11,22 @@ local M = {}
 
 local wezterm = require("wezterm")
 
+local function findPluginDir(myProject)
+	for _, v in ipairs(wezterm.plugin.list()) do
+		if v.url == myProject then
+			return v.plugin_dir
+		end
+	end
+	--- TODO Add error fail here
+end
+
+local separator = package.config:sub(1, 1) == "\\" and "\\" or "/"
+local repo_name = "file:///home/rootiest/projects/battery.wez"
+
+local plugin_dir = findPluginDir(repo_name)
+
+package.path = package.path .. ";" .. plugin_dir .. separator .. "plugin" .. separator .. "?.lua"
+
 --- Whether to invert the colors for light backgrounds.
 M.invert = false
 
