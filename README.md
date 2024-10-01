@@ -6,6 +6,11 @@ including charge levels and remaining time.
 This module is designed to enhance your terminal experience by
 displaying battery statistics in a visually appealing way.
 
+## Requirements
+
+- [Wezterm Nightly](https://wezfurlong.org/wezterm/) (requires wezterm.plugin support)
+- [NerdFonts](https://github.com/ryanoasis/nerd-fonts) (required for battery icons)
+
 ## Features
 
 - Display battery icons based on charge levels.
