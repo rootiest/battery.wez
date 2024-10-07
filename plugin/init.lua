@@ -11,8 +11,21 @@ local M = {}
 
 local wezterm = require("wezterm")
 
+---@function Automate color inversion
+---@return boolean invert Whether to invert the colors for light backgrounds
+local function auto_invert()
+	if wezterm.gui then
+		if wezterm.gui.get_appearance():find("Dark") then
+			return false
+		else
+			return true
+		end
+	end
+	return false
+end
+
 --- Whether to invert the colors for light backgrounds.
-M.invert = false
+M.invert = auto_invert()
 
 --- Converts a hex color to its opposite brightness.
 ---@param hex_color string The hex color in the format "#RRGGBB".
